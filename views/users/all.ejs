@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" ng-app="dendroApp" ng-animate="'animate'">
+<head>
+
+    <%-include ../layout/includes.ejs %>
+
+    <title>
+        LBAW ExpressJS Demo
+    </title>
+
+</head>
+
+<body>
+
+<h1><%=title%></h1>
+
+<a href="/users/new" class="btn btn-primary">
+    <span class="fa fa-crosshairs"></span>
+    Add user
+</a>
+
+<br/>
+<br/>
+
+<%if(users != null && users instanceof Array && users.length > 0) {%>
+
+<table>
+    <thead>
+    <tr>
+        <th>Username</th>
+        <th>First Name</th>
+        <th>Surname</th>
+    </tr>
+    </thead>
+    <% for(var i = 0; i < users.length; i++) { %>
+        <tr>
+            <td>
+                <%= user.username %>
+            </td>
+            <td>
+                <%= user.firstname %>
+            </td>
+            <td>
+                <%= user.surname %>
+            </td>
+        </tr>
+    <%}%>
+</table>
+
+<%} else {%>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">No users</h3>
+    </div>
+    <div class="panel-body">
+        There are no users in the system.
+    </div>
+</div>
+
+<%} %>
+</body>
