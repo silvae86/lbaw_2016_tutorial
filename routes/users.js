@@ -49,36 +49,11 @@ router.get('/new', function (req, res, next)
 
 router.get('/new_angularjs', function (req, res, next)
 {
-<<<<<<< HEAD
     res.render('users/new_angularjs',
         {
             title: 'New user'
         }
     );
-=======
-    return models.User.create({
-        username: req.body.username,
-        firstname : req.body.firstname,
-        surname : req.body.surname
-    })
-    .then(function(new_user) {
-        res.render('users/new',
-            {
-                title: 'New user',
-                success_message: "User "+ new_user.firstname +" " +new_user.surname+ "created successfully."
-            }
-        );
-    })
-    .catch(function(error) {
-        res.render('users/new',
-            {
-                title: 'New user',
-                error_message: "Error creating user "+ req.body.firstname +" " +req.body.surname + " : " + error
-            }
-        );
-    });
-
->>>>>>> origin/master
 });
 
 router.post('/new', function (req, res, next)

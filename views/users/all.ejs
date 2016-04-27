@@ -12,16 +12,15 @@
 
 <%if(locals.users != null && locals.users instanceof Array && locals.users.length > 0) {%>
 
-<<<<<<< HEAD
-<table class="table table-responsive">
-    <thead>
-    <tr>
-        <th>Username</th>
-        <th>First Name</th>
-        <th>Surname</th>
-    </tr>
-    </thead>
-    <% for(var i = 0; i < locals.users.length; i++) { %>
+    <table class="table table-responsive">
+        <thead>
+        <tr>
+            <th>Username</th>
+            <th>First Name</th>
+            <th>Surname</th>
+        </tr>
+        </thead>
+        <% for(var i = 0; i < locals.users.length; i++) { %>
         <tr>
             <td>
                 <%= locals.users[i].username %>
@@ -32,32 +31,9 @@
             <td>
                 <%= locals.users[i].surname %>
             </td>
-=======
-<div class="table-responsive">
-    <table class="table">
-        <thead>
-        <tr>
-            <th>Username</th>
-            <th>First Name</th>
-            <th>Surname</th>
->>>>>>> origin/master
         </tr>
-        </thead>
-        <% for(var i = 0; i < users.length; i++) { %>
-            <tr>
-                <td>
-                    <%= users[i].username %>
-                </td>
-                <td>
-                    <%= users[i].firstname %>
-                </td>
-                <td>
-                    <%= users[i].surname %>
-                </td>
-            </tr>
         <%}%>
     </table>
-</div>
 
 <%} else {%>
 
