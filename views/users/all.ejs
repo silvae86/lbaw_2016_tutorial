@@ -3,7 +3,7 @@
 <h1><%=locals.title%></h1>
 
 <a href="/users/new" class="btn btn-primary">
-    <span class="fa fa-crosshairs"></span>
+    <span class="fa fa-user"></span>
     Add user
 </a>
 
@@ -12,6 +12,7 @@
 
 <%if(locals.users != null && locals.users instanceof Array && locals.users.length > 0) {%>
 
+<<<<<<< HEAD
 <table class="table table-responsive">
     <thead>
     <tr>
@@ -31,9 +32,32 @@
             <td>
                 <%= locals.users[i].surname %>
             </td>
+=======
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Username</th>
+            <th>First Name</th>
+            <th>Surname</th>
+>>>>>>> origin/master
         </tr>
-    <%}%>
-</table>
+        </thead>
+        <% for(var i = 0; i < users.length; i++) { %>
+            <tr>
+                <td>
+                    <%= users[i].username %>
+                </td>
+                <td>
+                    <%= users[i].firstname %>
+                </td>
+                <td>
+                    <%= users[i].surname %>
+                </td>
+            </tr>
+        <%}%>
+    </table>
+</div>
 
 <%} else {%>
 
