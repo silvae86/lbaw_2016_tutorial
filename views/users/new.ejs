@@ -17,21 +17,23 @@
 
 <h1><%=title%></h1>
 
-<form action="new">
+<form action="/users/new" method="post">
     <div class="form-group">
         <label for="username">Username</label>
-        <input id="username" class="form-control" placeholder="Username">
+        <input name="username" id="username" class="form-control" placeholder="Username" value="joao">
     </div>
 
     <div class="form-group">
         <label for="firstname">First name</label>
-        <input id="firstname" class="form-control" placeholder="First Name">
+        <input name="firstname" id="firstname" class="form-control" placeholder="First Name" value="João">
     </div>
 
     <div class="form-group">
         <label for="surname">Surname</label>
-        <input id="surname" class="form-control" placeholder="Surname">
+        <input name="surname" id="surname" class="form-control" placeholder="Surname" value="Rocha">
     </div>
+
+    <button type="submit" class="btn btn-default">Submit</button>
 
 </form>
 

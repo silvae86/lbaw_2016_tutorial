@@ -29,13 +29,28 @@ router.get('/new', function (req, res, next)
 
 router.post('/new', function (req, res, next)
 {
+    return models.User.create({
+        username: req.body.username,
+        firstname : req.body.firstname,
+        surname : req.body.surname
+    })
+    .then(function(new_user) {
+        res.render('users/new',
+            {
+                title: 'New user',
+                success_message: "User "+ new_user.firstname +" " +new_user.surname+ "created successfully."
+            }
+        );
+    })
+    .catch(function(error) {
+        res.render('users/new',
+            {
+                title: 'New user',
+                error_message: "Error creating user "+ req.body.firstname +" " +req.body.surname + " : " + error
+            }
+        );
+    });
 
-    res.render('users/new',
-        {
-            title: 'New user',
-            message: "User "+ req.body.firstname +" " +req.body.surname+ "created successfully"
-        }
-    );
 });
 
 module.exports = router;
