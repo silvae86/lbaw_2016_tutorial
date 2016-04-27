@@ -1,38 +1,24 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" ng-app="dendroApp" ng-animate="'animate'">
-<head>
-
-    <%-include ../layout/includes.ejs %>
-
-    <title>
-        LBAW ExpressJS Demo
-    </title>
-
-</head>
-
-<body>
+<%-include ../layout/header.ejs %>
 
 <h1><%=title%></h1>
 
-<form action="new">
+<form action="new" method="post">
     <div class="form-group">
         <label for="username">Username</label>
-        <input id="username" class="form-control" placeholder="Username">
+        <input id="username" class="form-control" placeholder="Username" name="username">
     </div>
 
     <div class="form-group">
         <label for="firstname">First name</label>
-        <input id="firstname" class="form-control" placeholder="First Name">
+        <input id="firstname" class="form-control" placeholder="First Name" name="firstname">
     </div>
 
     <div class="form-group">
         <label for="surname">Surname</label>
-        <input id="surname" class="form-control" placeholder="Surname">
+        <input id="surname" class="form-control" placeholder="Surname" name="surname">
     </div>
 
+    <button type="submit" class="btn btn-default">Submit</button>
 </form>
 
-</body>
+<%-include ../layout/footer.ejs %>

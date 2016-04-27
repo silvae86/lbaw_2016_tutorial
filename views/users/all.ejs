@@ -1,21 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<%- include ../layout/header.ejs %>
 
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" ng-app="dendroApp" ng-animate="'animate'">
-<head>
-
-    <%-include ../layout/includes.ejs %>
-
-    <title>
-        LBAW ExpressJS Demo
-    </title>
-
-</head>
-
-<body>
-
-<h1><%=title%></h1>
+<h1><%=locals.title%></h1>
 
 <a href="/users/new" class="btn btn-primary">
     <span class="fa fa-crosshairs"></span>
@@ -25,9 +10,9 @@
 <br/>
 <br/>
 
-<%if(users != null && users instanceof Array && users.length > 0) {%>
+<%if(locals.users != null && locals.users instanceof Array && locals.users.length > 0) {%>
 
-<table>
+<table class="table table-responsive">
     <thead>
     <tr>
         <th>Username</th>
@@ -35,16 +20,16 @@
         <th>Surname</th>
     </tr>
     </thead>
-    <% for(var i = 0; i < users.length; i++) { %>
+    <% for(var i = 0; i < locals.users.length; i++) { %>
         <tr>
             <td>
-                <%= user.username %>
+                <%= locals.users[i].username %>
             </td>
             <td>
-                <%= user.firstname %>
+                <%= locals.users[i].firstname %>
             </td>
             <td>
-                <%= user.surname %>
+                <%= locals.users[i].surname %>
             </td>
         </tr>
     <%}%>
@@ -62,4 +47,5 @@
 </div>
 
 <%} %>
-</body>
+
+<%- include ../layout/footer.ejs %>

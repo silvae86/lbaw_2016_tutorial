@@ -1,15 +1,10 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
+<%- include ./layout/header.ejs %>
 
-    <%-include layout/includes.ejs%>
-
-  </head>
-  <body>
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
-  </body>
 
-  <a href="/users/all">See all users</a>
-</html>
+    <div class="alert alert-warning" role="alert">
+        This is a demo of NodeJS + ExpressJS and AngularJS. All database records are <b>destroyed</b> upon server reboot!
+    </div>
+
+<%- include ./layout/footer.ejs %>

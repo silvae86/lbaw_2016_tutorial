@@ -3,7 +3,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'LBAW ExpressJS + AngularJS Demo' });
+  res.render('index', { title: 'Demo app' });
 });
 
 module.exports = router;

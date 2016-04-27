@@ -1,0 +1,49 @@
+        <%- include ../layout/header.ejs %>
+
+        <h1><%=title%></h1>
+
+
+        <div ng-controller="usersCtrl" ng-init="get_all_users()">
+
+            <a href="/users/new_angularjs" class="btn btn-primary">
+                <span class="fa fa-user-plus"></span>
+                Add user
+            </a>
+
+            <br/>
+            <br/>
+
+            <table class="table table-responsive" ng-show="users != null">
+                <thead>
+                <tr>
+                    <th>Username</th>
+                    <th>First Name</th>
+                    <th>Surname</th>
+                </tr>
+                </thead>
+                <tr ng-repeat="user in users track by $index">
+                    <td>
+                        {{user.username}}
+                    </td>
+                    <td>
+                        {{user.firstname}}
+                    </td>
+                    <td>
+                        {{user.surname}}
+                    </td>
+                </tr>
+            </table>
+
+            <div ng-show="users == null">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">No users</h3>
+                    </div>
+                    <div class="panel-body">
+                        There are no users in the system.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <%- include ../layout/footer.ejs %>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" ng-app="usersApp" ng-animate="'animate'">
+<head>
+    <%-include ./includes.ejs %>
+    <title>
+        <%=title%>
+    </title>
+</head>
+
+<body ng-app="usersApp" ng-controller="windowCtrl">
+
+    <%-include ./navbar.ejs %>
+
+    <% if(locals.flash != null ) {%>
+        <%for(var i = 0; i < locals.flash.length; i++) {%>
+            <div class="alert alert-<%=locals.flash[i].type%>" role="alert">
+                <%=locals.flash[i].message%>
+                <%locals.flash.shift()%>
+            </div>
+        <%}%>
+    <% }%>
+
