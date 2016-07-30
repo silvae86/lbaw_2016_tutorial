@@ -3,30 +3,34 @@ var router = express.Router();
 var models  = require('../models');
 
 /* GET users listing. */
-router.get('/all', function (req, res, next)
-{
-    var acceptsHTML = req.accepts('html');
-    var acceptsJSON = req.accepts('json');
-
-    models.User.findAll({
-        include: [ models.Task ]
-    }).then(function(users) {
-
-        if(acceptsJSON && !acceptsHTML)  //will be null if the client does not accept html
-        {
-            res.json(users);
-        }
-        else
-        {
-                res.render('users/all',
-                {
-                    title: 'All users',
-                    users: users
-                }
-            );
-        }
-    });
-});
+router.get(
+    '/all', 
+    function (req, res, next)
+    {
+        var acceptsHTML = req.accepts('html');
+        var acceptsJSON = req.accepts('json');
+    
+        models.User.findAll({
+            include: [ models.Task ]
+        }).then(function(users) {
+    
+            if(acceptsJSON && !acceptsHTML)  //will be null if the client does not accept html
+            {
+                res.json(users);
+            }
+            else
+            {
+                    res.render(
+                        'users/all',
+                        {
+                            title: 'All users',
+                            users: users
+                        }
+                    );
+            }
+        });
+    }
+);
 
 router.get('/all_angularjs', function (req, res, next)
 {
